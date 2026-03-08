@@ -1,0 +1,18 @@
+======================================================================
+Dataset: BAL ladybug problem-49-7776-pre.txt
+Cameras: 49, 3D points: 7776, observations: 31843, parameters: 23769
+Build flags: SCHUR_SPECIALIZATIONS=OFF
+Iterations: 20, Ordering: AMD
+======================================================================
+
+Solver                        | Linear solver time, s | Total time, s | Final cost
+SPARSE_NORMAL_CHOLESKY + AMD  | 1.758                 | 2.255         | 1.3345e+04
+SPARSE_SCHUR + AMD            | 0.653                 | 1.168         | 1.3345e+04
+
+======================================================================
+Notes
+======================================================================
+- SPARSE_SCHUR is 2.7x faster for linear solver, 1.9x faster overall
+- Schur structure: d,d,d (generic templates, SCHUR_SPECIALIZATIONS=OFF)
+- Preprocessor time (symbolic analysis AMD): ~0.033-0.040s, constant across iterations
+- NESDIS unavailable: requires METIS (libmetis-dev), not included in libsuitesparse-dev
