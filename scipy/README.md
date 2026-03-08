@@ -20,18 +20,13 @@ python3 bench_scipy.py
 Compares UMFPACK and SuperLU performance for sparse nonsymmetric matrices
 of sizes n=500, 1000, 2000, 5000 with 1% density.
 
-### bench_scipy2.py — Scenario 3: linprog interior-point (feasibility fix)
-```bash
-python3 bench_scipy2.py
-```
-Tests interior-point LP solver with guaranteed feasible problem formulation.
-
 ### bench_scipy3.py — Scenario 3: CHOLMOD vs UMFPACK vs dense Cholesky
 ```bash
 python3 bench_scipy3.py
 ```
 Compares sparse+Cholesky (CHOLMOD), sparse+UMFPACK and dense+Cholesky
 solvers within the interior-point method for LP problems.
+Feasibility is guaranteed: b = A @ x0, x0 >= 0.
 
 ## Results
 Pre-computed results are available in `results.txt`.
