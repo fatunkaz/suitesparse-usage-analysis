@@ -4,6 +4,8 @@
 - OS: Debian GNU/Linux (WSL2, x86-64)
 - GCC 14.2.0, Ceres Solver 2.3.0, SuiteSparse 7.10.1, Eigen 3.4.0
 
+
+
 ## Build
 ```bash
 cd ~/ceres_build
