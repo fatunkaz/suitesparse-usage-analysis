@@ -1,0 +1,16 @@
+===========================================================================================================================
+								Сценарий 1 и 2: spsolve и factorized (UMFPACK vs SuperLU)
+===========================================================================================================================
+n=  500 | UMFPACK: 0.0342s | SuperLU: 0.0114s | factorized(3x): 0.0222s | err_umf=1.36e-16 | err_slu=3.54e-16
+n= 1000 | UMFPACK: 0.0951s | SuperLU: 0.1131s | factorized(3x): 0.0867s | err_umf=1.63e-16 | err_slu=7.17e-16
+n= 2000 | UMFPACK: 0.4315s | SuperLU: 0.6235s | factorized(3x): 0.5794s | err_umf=2.37e-16 | err_slu=1.23e-15
+n= 5000 | UMFPACK: 4.3126s | SuperLU: 10.9370s | factorized(3x): 3.7962s | err_umf=3.52e-16 | err_slu=2.24e-15
+
+
+===========================================================================================================================
+							Сценарий 3: CHOLMOD через linprog interior-point, sparse=True
+===========================================================================================================================
+n=  100, m=  50 | sparse+cholesky: 0.0013s (iters=0) | sparse+umfpack: 0.0008s (iters=0) | dense: 0.0006s (iters=0)
+n=  500, m= 250 | sparse+cholesky: 0.8909s (iters=13) | sparse+umfpack: 1.0395s (iters=13) | dense: 0.1410s (iters=13)
+n= 1000, m= 500 | sparse+cholesky: 7.0613s (iters=15) | sparse+umfpack: 6.5193s (iters=15) | dense: 0.7271s (iters=15)
+n= 2000, m=1000 | sparse+cholesky: 68.0931s (iters=15) | sparse+umfpack: 57.9886s (iters=15) | dense: 6.9545s (iters=15)
