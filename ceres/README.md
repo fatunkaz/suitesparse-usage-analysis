@@ -4,16 +4,25 @@
 - OS: Debian GNU/Linux (WSL2, x86-64)
 - GCC 14.2.0, Ceres Solver 2.3.0, SuiteSparse 7.10.1, Eigen 3.4.0
 
+## Installation 
 
+```bash
+sudo apt-get install -y libeigen3-dev
+sudo apt-get install -y libgoogle-glog-dev
+sudo apt-get install -y libflags-dev
+sudo apt-get install -y libabsl-dev
+git clone https://github.com/ceres-solver/ceres-solver.git
+```
 
 ## Build
 ```bash
-cd ~/ceres_build
+mkdir ~/ceres_build && cd ~/ceres_build
 cmake ~/ceres-solver \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DSCHUR_SPECIALIZATIONS=OFF \
-  -DBUILD_EXAMPLES=ON
-make -j4
+    -DCMAKE_BUILD_TYPE=Release \
+    -DSUITESPARSE=ON \
+    -DBUILD_EXAMPLES=ON \
+    -DBUILD_TESTING=OFF
+make -j$(nproc)
 ```
 
 ## Dataset
@@ -30,16 +39,16 @@ cd ~/ceres_build/bin
 # SPARSE_NORMAL_CHOLESKY + AMD
 ./bundle_adjuster \
   --input ~/suitesparse-usage-analysis/ceres/data/problem-49-7776-pre.txt \
-  --linear_solver=sparse_normal_cholesky \
-  --ordering=amd \
-  --num_iterations=20
+  --linear_solver sparse_normal_cholesky \
+  --ordering_type amd \
+  --num_iterations 20
 
 # SPARSE_SCHUR + AMD
 ./bundle_adjuster \
   --input ~/suitesparse-usage-analysis/ceres/data/problem-49-7776-pre.txt \
-  --linear_solver=sparse_schur \
-  --ordering=amd \
-  --num_iterations=20
+  --linear_solver sparse_schur \
+  --ordering_type amd \
+  --num_iterations 20
 ```
 
 ## Results

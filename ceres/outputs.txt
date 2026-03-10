@@ -1,0 +1,142 @@
+===========================================================================================================
+                                sparse_normal_cholesky + AMD, 20 iter 
+===========================================================================================================
+iter      cost      cost_change  |gradient|   |step|    tr_ratio  tr_radius  ls_iter  iter_time  total_time
+   0  8.509125e+05    0.00e+00    8.57e+06   0.00e+00   0.00e+00  1.00e+04        0    1.17e-02    4.46e-02
+   1  4.576830e+04    8.05e+05    3.49e+06   0.00e+00   9.62e-01  3.00e+04        1    1.49e-01    1.94e-01
+   2  1.478490e+04    3.10e+04    4.35e+05   1.65e+04   9.60e-01  9.00e+04        1    1.23e-01    3.17e-01
+   3  1.346075e+04    1.32e+03    3.65e+04   2.58e+04   9.69e-01  2.70e+05        1    1.20e-01    4.37e-01
+   4  1.344080e+04    2.00e+01    4.99e+04   5.06e+04   2.59e-01  2.43e+05        1    9.57e-02    5.33e-01
+   5  1.338995e+04    5.09e+01    1.86e+04   5.65e+04   8.12e-01  3.20e+05        1    1.06e-01    6.39e-01
+   6  1.337793e+04    1.20e+01    1.61e+04   7.99e+04   5.69e-01  3.21e+05        1    1.04e-01    7.43e-01
+   7  1.336706e+04    1.09e+01    8.01e+03   8.45e+04   7.69e-01  3.81e+05        1    8.72e-02    8.31e-01
+   8  1.336135e+04    5.71e+00    5.92e+03   1.04e+05   7.27e-01  4.20e+05        1    9.45e-02    9.25e-01
+   9  1.335722e+04    4.13e+00    3.71e+03   1.19e+05   7.71e-01  4.99e+05        1    1.14e-01    1.04e+00
+  10  1.335426e+04    2.96e+00    2.71e+03   1.45e+05   7.68e-01  5.90e+05        1    9.57e-02    1.14e+00
+  11  1.335201e+04    2.25e+00    1.89e+03   1.75e+05   7.77e-01  7.11e+05        1    1.00e-01    1.24e+00
+  12  1.335029e+04    1.72e+00    1.33e+03   2.15e+05   7.80e-01  8.62e+05        1    1.02e-01    1.34e+00
+  13  1.334897e+04    1.32e+00    9.27e+02   2.63e+05   7.83e-01  1.05e+06        1    9.27e-02    1.43e+00
+  14  1.334795e+04    1.02e+00    6.51e+02   3.05e+05   7.85e-01  1.29e+06        1    8.96e-02    1.52e+00
+  15  1.334718e+04    7.74e-01    4.66e+02   3.05e+05   7.89e-01  1.60e+06        1    1.13e-01    1.63e+00
+  16  1.334658e+04    5.98e-01    3.41e+02   3.17e+05   7.90e-01  1.99e+06        1    1.42e-01    1.77e+00
+  17  1.334611e+04    4.67e-01    2.54e+02   3.54e+05   7.91e-01  2.48e+06        1    1.56e-01    1.93e+00
+  18  1.334575e+04    3.66e-01    1.93e+02   4.09e+05   7.93e-01  3.10e+06        1    1.19e-01    2.05e+00
+  19  1.334546e+04    2.85e-01    1.33e+02   4.55e+05   7.98e-01  3.94e+06        1    1.07e-01    2.16e+00
+  20  1.334524e+04    2.24e-01    9.47e+01   5.20e+05   7.99e-01  5.01e+06        1    9.59e-02    2.25e+00
+
+Solver Summary (v 2.3.0-eigen-(3.4.0)-lapack-suitesparse-(7.10.1)-eigensparse)
+
+                                     Original                  Reduced
+Parameter blocks                         7825                     7825
+Parameters                              23769                    23769
+Residual blocks                         31843                    31843
+Residuals                               63686                    63686
+
+Minimizer                        TRUST_REGION
+Trust region strategy     LEVENBERG_MARQUARDT
+Sparse linear algebra library    SUITE_SPARSE
+
+                                        Given                     Used
+Linear solver          SPARSE_NORMAL_CHOLESKY   SPARSE_NORMAL_CHOLESKY
+Threads                                    16                       16
+Linear solver ordering                7776,49                  7776,49
+
+Cost:
+Initial                          8.509125e+05
+Final                            1.334524e+04
+Change                           8.375672e+05
+
+Minimizer iterations                       21
+Successful steps                           21
+Unsuccessful steps                          0
+
+Time (in seconds):
+Preprocessor                         0.032827
+
+  Residual only evaluation           0.059510 (20)
+  Jacobian & residual evaluation     0.245460 (21)
+  Linear solver                      1.758128 (20)
+Minimizer                            2.220674
+
+Postprocessor                        0.001838
+Total                                2.255346
+
+Termination:                   NO_CONVERGENCE (Maximum number of iterations reached. Number of iterations: 20.)
+
+
+real    0m2.386s
+user    0m33.665s
+sys     0m0.307s
+
+
+============================================================================================================
+                                      sparse_schur + AMD, 20 iter 
+============================================================================================================
+
+iter      cost      cost_change  |gradient|   |step|    tr_ratio  tr_radius  ls_iter  iter_time  total_time
+   0  8.509125e+05    0.00e+00    8.57e+06   0.00e+00   0.00e+00  1.00e+04        0    1.00e-02    4.81e-02
+   1  4.576830e+04    8.05e+05    3.49e+06   0.00e+00   9.62e-01  3.00e+04        1    5.72e-02    1.06e-01
+   2  1.478490e+04    3.10e+04    4.35e+05   1.65e+04   9.60e-01  9.00e+04        1    4.59e-02    1.51e-01
+   3  1.346075e+04    1.32e+03    3.65e+04   2.58e+04   9.69e-01  2.70e+05        1    5.73e-02    2.09e-01
+   4  1.344080e+04    2.00e+01    4.99e+04   5.06e+04   2.59e-01  2.43e+05        1    5.43e-02    2.63e-01
+   5  1.338995e+04    5.09e+01    1.86e+04   5.65e+04   8.12e-01  3.20e+05        1    4.86e-02    3.12e-01
+   6  1.337793e+04    1.20e+01    1.61e+04   7.99e+04   5.69e-01  3.21e+05        1    5.29e-02    3.65e-01
+   7  1.336706e+04    1.09e+01    8.01e+03   8.45e+04   7.69e-01  3.81e+05        1    6.28e-02    4.28e-01
+   8  1.336135e+04    5.71e+00    5.92e+03   1.04e+05   7.27e-01  4.20e+05        1    6.70e-02    4.95e-01
+   9  1.335722e+04    4.13e+00    3.71e+03   1.19e+05   7.71e-01  4.99e+05        1    5.55e-02    5.50e-01
+  10  1.335426e+04    2.96e+00    2.71e+03   1.45e+05   7.68e-01  5.90e+05        1    5.86e-02    6.09e-01
+  11  1.335201e+04    2.25e+00    1.89e+03   1.75e+05   7.77e-01  7.11e+05        1    5.74e-02    6.66e-01
+  12  1.335029e+04    1.72e+00    1.33e+03   2.15e+05   7.80e-01  8.62e+05        1    7.26e-02    7.39e-01
+  13  1.334897e+04    1.32e+00    9.27e+02   2.63e+05   7.83e-01  1.05e+06        1    6.09e-02    8.00e-01
+  14  1.334795e+04    1.02e+00    6.51e+02   3.05e+05   7.85e-01  1.29e+06        1    5.60e-02    8.56e-01
+  15  1.334718e+04    7.74e-01    4.66e+02   3.05e+05   7.89e-01  1.60e+06        1    5.45e-02    9.11e-01
+  16  1.334658e+04    5.98e-01    3.41e+02   3.17e+05   7.90e-01  1.99e+06        1    4.93e-02    9.60e-01
+  17  1.334611e+04    4.67e-01    2.54e+02   3.54e+05   7.91e-01  2.48e+06        1    6.20e-02    1.02e+00
+  18  1.334575e+04    3.66e-01    1.93e+02   4.09e+05   7.93e-01  3.10e+06        1    4.88e-02    1.07e+00
+  19  1.334546e+04    2.85e-01    1.33e+02   4.55e+05   7.98e-01  3.94e+06        1    5.39e-02    1.12e+00
+  20  1.334524e+04    2.24e-01    9.47e+01   5.20e+05   7.99e-01  5.01e+06        1    4.16e-02    1.17e+00
+
+Solver Summary (v 2.3.0-eigen-(3.4.0)-lapack-suitesparse-(7.10.1)-eigensparse)
+
+                                     Original                  Reduced
+Parameter blocks                         7825                     7825
+Parameters                              23769                    23769
+Residual blocks                         31843                    31843
+Residuals                               63686                    63686
+
+Minimizer                        TRUST_REGION
+Trust region strategy     LEVENBERG_MARQUARDT
+Sparse linear algebra library    SUITE_SPARSE + AMD
+
+                                        Given                     Used
+Linear solver                    SPARSE_SCHUR             SPARSE_SCHUR
+Threads                                    16                       16
+Linear solver ordering                7776,49                  7776,49
+Schur structure                         2,3,9                    d,d,d
+
+Cost:
+Initial                          8.509125e+05
+Final                            1.334524e+04
+Change                           8.375672e+05
+
+Minimizer iterations                       21
+Successful steps                           21
+Unsuccessful steps                          0
+
+Time (in seconds):
+Preprocessor                         0.038091
+
+  Residual only evaluation           0.059451 (20)
+  Jacobian & residual evaluation     0.291375 (21)
+  Linear solver                      0.652653 (20)
+Minimizer                            1.128970
+
+Postprocessor                        0.000882
+Total                                1.167946
+
+Termination:                   NO_CONVERGENCE (Maximum number of iterations reached. Number of iterations: 20.)
+
+
+real    0m1.295s
+user    0m19.190s
+sys     0m0.236s
