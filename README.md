@@ -19,7 +19,6 @@ suitesparse-usage-analysis/
 │   └── README.md        # Build instructions and run commands
 └── scipy/               # SciPy experiments (UMFPACK, CHOLMOD)
     ├── bench_scipy.py   # Scenarios 1 & 2: UMFPACK vs SuperLU
-    ├── bench_scipy2.py  # Scenario 3: linprog feasibility fix
     ├── bench_scipy3.py  # Scenario 3: CHOLMOD vs UMFPACK vs dense
     ├── results.txt      # Pre-computed experiment results
     └── README.md        # Installation and run instructions
