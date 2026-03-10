@@ -13,14 +13,17 @@ suitesparse-usage-analysis/
 ├── ceres/               # Ceres Solver experiments (CHOLMOD, SPQR)
 │   ├── data/            # BAL dataset (problem-49-7776-pre.txt)
 │   ├── results.txt      # Pre-computed experiment results
+    ├── outputs.txt      # Output of experimental programs
 │   └── README.md        # Build instructions and run commands
 ├── sundials/            # SUNDIALS experiments (KLU)
 │   ├── results.txt      # Pre-computed experiment results
+    ├── outputs.txt      # Output of experimental programs
 │   └── README.md        # Build instructions and run commands
 └── scipy/               # SciPy experiments (UMFPACK, CHOLMOD)
     ├── bench_scipy.py   # Scenarios 1 & 2: UMFPACK vs SuperLU
     ├── bench_scipy3.py  # Scenario 3: CHOLMOD vs UMFPACK vs dense
     ├── results.txt      # Pre-computed experiment results
+    ├── outputs.txt      # Output of experimental programs
     └── README.md        # Installation and run instructions
 ```
 
