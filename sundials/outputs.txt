@@ -1,0 +1,58 @@
+======================================================================
+Scenario 1 & 2: cvRoberts_block_klu — scalability (CVODE + KLU)
+======================================================================
+
+N=1:
+real    0m0.004s
+user    0m0.000s
+sys     0m0.004s
+N=10:
+real    0m0.003s
+user    0m0.000s
+sys     0m0.000s
+N=100:
+real    0m0.008s
+user    0m0.004s
+sys     0m0.005s
+N=500:
+real    0m0.031s
+user    0m0.032s
+sys     0m0.000s
+N=1000:
+real    0m0.047s
+user    0m0.047s
+sys     0m0.005s
+N=5000:
+real    0m0.251s
+user    0m0.269s
+sys     0m0.005s
+
+======================================================================
+Scenario 3: idaRoberts_klu — DAE problem (IDA + KLU)
+======================================================================
+
+Final Run Statistics:
+Number of steps                    = 375
+Number of residual evaluations     = 529
+Number of Jacobian evaluations     = 54
+Number of nonlinear iterations     = 529
+Number of error test failures      = 10
+Number of nonlinear conv. failures = 4
+Number of step solver failures     = 0
+Number of root fn. evaluations     = 409
+real    0m0.004s
+user    0m0.005s
+sys     0m0.000s
+
+======================================================================
+CVODE solver statistics (constant across N_g)
+======================================================================
+
+=== N=1 ===
+nst = 558    nfe = 777    nsetups = 112    nje = 12
+=== N=100 ===
+nst = 543    nfe = 804    nsetups = 114    nje = 11
+=== N=1000 ===
+nst = 543    nfe = 788    nsetups = 115    nje = 12
+=== N=5000 ===
+nst = 569    nfe = 787    nsetups = 109    nje = 11
