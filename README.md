@@ -33,6 +33,17 @@ suitesparse-usage-analysis/
 - Ceres Solver 2.3.0
 - SciPy 1.15.3, scikit-umfpack 0.4.2, scikit-sparse 0.5.0
 
+## Required dependencies
+
+To correctly perform these experiments, the following dependencies are required:
+
+```bash
+sudo apt-get install -y gcc g++ cmake make wget
+sudo apt-get install -y libopenblas-dev
+sudo apt-get install -y liblapack-dev
+sudo apt-get install -y libsuitesparse-dev
+```
+
 ## See Also
 
 Each subdirectory contains its own README with detailed build
