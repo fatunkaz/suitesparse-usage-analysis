@@ -7,8 +7,9 @@
 
 ## Installation
 ```bash
-sudo apt-get install -y swig
-pip install scikit-umfpack scikit-sparse --break-system-packages
+sudo apt-get install -y python3-pip python3-scipy swig
+pip install scikit-umfpack --break-system-packages
+pip install scikit-sparse --break-system-packages
 ```
 
 ## Scripts
