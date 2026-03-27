@@ -52,8 +52,8 @@ jobs:
           pip install scikit-umfpack || true
           pip install scikit-sparse || true
 
-      - name: Run bench_scipy.py
+      - name: Run bench_scipy1.py
         run: python3 scipy/bench_scipy.py
 
-      - name: Run bench_scipy3.py
+      - name: Run bench_scipy2.py
         run: python3 scipy/bench_scipy3.py
