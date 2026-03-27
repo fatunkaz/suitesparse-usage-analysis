@@ -1,20 +1,20 @@
 import numpy as np
 import scipy.sparse as sp
-import scipy.sparse.linalg as spla
 import time
-
 from scipy.sparse.linalg import use_solver, spsolve, factorized
 
 np.random.seed(42)
 
+
 def make_sparse_spd(n, density=0.01):
-    """Создать разреженную СПД матрицу размера n x n"""
+    """Create a sparse SPD matrix of size n x n"""
     A = sp.random(n, n, density=density, format='csc', dtype=np.float64)
     A = A @ A.T + sp.eye(n, format='csc') * n
     return A.tocsc()
 
+
 def make_sparse_nonsym(n, density=0.01):
-    """Создать разреженную несимметричную матрицу размера n x n"""
+    """Create a sparse nonsymmetric matrix of size n x n"""
     A = sp.random(n, n, density=density, format='csc', dtype=np.float64)
     A = A + sp.eye(n, format='csc') * n
     return A.tocsc()
@@ -22,26 +22,26 @@ def make_sparse_nonsym(n, density=0.01):
 sizes = [500, 1000, 2000, 5000]
 
 print("=" * 70)
-print("Сценарий 1 и 2: spsolve и factorized (UMFPACK vs SuperLU)")
+print("Scenario 1 and 2: spsolve and factorized (UMFPACK vs SuperLU)")
 print("=" * 70)
 
 for n in sizes:
     A = make_sparse_nonsym(n)
     b = np.random.randn(n)
 
-    # UMFPACK через spsolve
+    # UMFPACK via spsolve
     use_solver(useUmfpack=True)
     t0 = time.perf_counter()
     x1 = spsolve(A, b)
     t_umfpack = time.perf_counter() - t0
 
-    # SuperLU через spsolve
+    # SuperLU via spsolve
     use_solver(useUmfpack=False)
     t0 = time.perf_counter()
     x2 = spsolve(A, b)
     t_superlu = time.perf_counter() - t0
 
-    # factorized (UMFPACK) - многократное решение
+    # factorized (UMFPACK) - multiple solutions
     use_solver(useUmfpack=True)
     t0 = time.perf_counter()
     solve = factorized(A)
