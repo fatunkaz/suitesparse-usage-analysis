@@ -19,6 +19,7 @@ def make_sparse_nonsym(n, density=0.01):
     A = A + sp.eye(n, format='csc') * n
     return A.tocsc()
 
+
 sizes = [500, 1000, 2000, 5000]
 
 print("=" * 70)
