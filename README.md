@@ -1,17 +1,25 @@
 # SuiteSparse Usage Analysis
 
+[![CI](https://github.com/fatunkaz/suitesparse-usage-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/fatunkaz/suitesparse-usage-analysis/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Experimental code and data for the internship report
-"Identification and Analysis of SuiteSparse Usage Scenarios in Application Packages"
+"Identification and Analysis of SuiteSparse Usage Scenarios in Application Packages".
+
+The repository contains three independent experiments demonstrating how
+[SuiteSparse](https://github.com/DrTimothyAldenDavis/SuiteSparse) sparse matrix
+solvers (KLU, CHOLMOD, UMFPACK, SPQR) are used in real-world scientific packages:
+SUNDIALS, Ceres Solver, and SciPy.
 
 **Author:** Pakhomov Georgiy Aleksandrovich  
 **University:** Saint Petersburg State University  
 **Year:** 2026
 
 ## Repository Structure
+
 ```
 suitesparse-usage-analysis/
 ├── ceres/               # Ceres Solver experiments (CHOLMOD, SPQR)
-│   ├── data/            # BAL dataset (problem-49-7776-pre.txt)
 │   ├── results.txt      # Pre-computed experiment results
     ├── outputs.txt      # Output of experimental programs
 │   └── README.md        # Build instructions and run commands
