@@ -27,7 +27,13 @@ make -j$(nproc)
 
 ## Dataset
 BAL (Bundle Adjustment in the Large) — ladybug scene:
-- File: data/problem-49-7776-pre.txt
+```bash
+mkdir ~/data && cd ~/data
+sudo apt-get install -y bzip2
+wget http://grail.cs.washington.edu/projects/bal/data/ladybug/problem-49-7776-pre.txt.bz2
+bunzip2 problem-49-7776-pre.txt.bz2
+```
+- File: problem-49-7776-pre.txt
 - Cameras: 49, 3D points: 7776, observations: 31843, parameters: 23769
 
 ## Experiments
@@ -38,14 +44,14 @@ cd ~/ceres_build/bin
 
 # SPARSE_NORMAL_CHOLESKY + AMD
 ./bundle_adjuster \
-  --input ~/suitesparse-usage-analysis/ceres/data/problem-49-7776-pre.txt \
+  --input ~/data/problem-49-7776-pre.txt \
   --linear_solver sparse_normal_cholesky \
   --ordering_type amd \
   --num_iterations 20
 
 # SPARSE_SCHUR + AMD
 ./bundle_adjuster \
-  --input ~/suitesparse-usage-analysis/ceres/data/problem-49-7776-pre.txt \
+  --input ~/data/problem-49-7776-pre.txt \
   --linear_solver sparse_schur \
   --ordering_type amd \
   --num_iterations 20

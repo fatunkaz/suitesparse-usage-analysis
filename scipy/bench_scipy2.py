@@ -8,7 +8,7 @@ warnings.filterwarnings('ignore')
 np.random.seed(42)
 
 print("=" * 70)
-print("Сценарий 3: CHOLMOD через linprog interior-point, sparse=True")
+print("Scenario 3: CHOLMOD via linprog interior-point, sparse=True")
 print("=" * 70)
 
 for n in [100, 500, 1000, 2000]:
@@ -27,7 +27,7 @@ for n in [100, 500, 1000, 2000]:
                            'disp': False})
     t_cholmod = time.perf_counter() - t0
 
-    # Без CHOLMOD (sparse=True, cholesky=False — через UMFPACK)
+    # Without CHOLMOD (sparse=True, cholesky=False — via UMFPACK)
     t0 = time.perf_counter()
     res2 = linprog(c, A_eq=A_eq, b_eq=b_eq,
                    method='interior-point',
@@ -36,7 +36,7 @@ for n in [100, 500, 1000, 2000]:
                             'disp': False})
     t_umfpack = time.perf_counter() - t0
 
-    # Без разреженности (dense Cholesky)
+    # Without sparseness (dense Cholesky)
     t0 = time.perf_counter()
     res3 = linprog(c, A_eq=A_eq.toarray(), b_eq=b_eq,
                    method='interior-point',
