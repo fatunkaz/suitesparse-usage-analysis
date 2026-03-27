@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-wget ://github.com/LLNL/sundials/releases/download/v7.6.0/sundials-7.6.0.tar.gz
+wget https://github.com/LLNL/sundials/releases/download/v7.6.0/sundials-7.6.0.tar.gz
 tar -xzf sundials-7.6.0.tar.gz
 mv sundials-7.6.0 sundials 
 ```
