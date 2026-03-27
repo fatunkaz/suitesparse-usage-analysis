@@ -55,4 +55,3 @@ for n in sizes:
 
     print(f"n={n:5d} | UMFPACK: {t_umfpack:.4f}s | SuperLU: {t_superlu:.4f}s | "
           f"factorized(3x): {t_factorized:.4f}s | err_umf={err1:.2e} | err_slu={err2:.2e}")
-
