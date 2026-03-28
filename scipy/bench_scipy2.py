@@ -6,7 +6,7 @@ linear programme with a sparse equality constraint matrix. Compares:
   - sparse + Cholesky (CHOLMOD via SuiteSparse)
   - sparse + UMFPACK (LU fallback)
   - dense + Cholesky (no sparse solver)
- 
+
 Problem sizes: n=100..2000 variables, m=n/2 equality constraints, density=5%.
 Feasibility is guaranteed: b = A @ x0, x0 >= 0.
 """

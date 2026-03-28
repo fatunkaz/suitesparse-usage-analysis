@@ -1,10 +1,10 @@
 """
 Benchmark: UMFPACK vs SuperLU for sparse linear systems (SciPy).
- 
+
 Scenarios 1 and 2:
   - Scenario 1: single solve via spsolve (UMFPACK vs SuperLU)
   - Scenario 2: repeated solves via factorized (UMFPACK, LU cached)
- 
+
 Matrix: sparse nonsymmetric, sizes n=500..5000, density=1%.
 """
 
@@ -18,11 +18,11 @@ np.random.seed(42)
 
 def make_sparse_spd(n, density=0.01):
     """Create a sparse symmetric positive definite matrix of size n x n.
- 
+
     Args:
         n: matrix dimension.
         density: fraction of nonzero entries before symmetrisation.
- 
+
     Returns:
         Sparse CSC matrix A = R @ R.T + n*I, guaranteed SPD.
     """
@@ -33,11 +33,11 @@ def make_sparse_spd(n, density=0.01):
 
 def make_sparse_nonsym(n, density=0.01):
     """Create a sparse nonsymmetric diagonally dominant matrix of size n x n.
- 
+
     Args:
         n: matrix dimension.
         density: fraction of nonzero off-diagonal entries.
- 
+        
     Returns:
         Sparse CSC matrix A = R + n*I, nonsingular by diagonal dominance.
     """
