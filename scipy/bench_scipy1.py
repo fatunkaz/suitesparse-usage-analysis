@@ -37,7 +37,7 @@ def make_sparse_nonsym(n, density=0.01):
     Args:
         n: matrix dimension.
         density: fraction of nonzero off-diagonal entries.
-        
+
     Returns:
         Sparse CSC matrix A = R + n*I, nonsingular by diagonal dominance.
     """
