@@ -1,3 +1,16 @@
+"""
+Benchmark: CHOLMOD vs UMFPACK vs dense Cholesky in SciPy linprog (Scenario 3).
+ 
+Uses scipy.optimize.linprog with the interior-point method to solve a
+linear programme with a sparse equality constraint matrix. Compares:
+  - sparse + Cholesky (CHOLMOD via SuiteSparse)
+  - sparse + UMFPACK (LU fallback)
+  - dense + Cholesky (no sparse solver)
+ 
+Problem sizes: n=100..2000 variables, m=n/2 equality constraints, density=5%.
+Feasibility is guaranteed: b = A @ x0, x0 >= 0.
+"""
+
 import numpy as np
 import scipy.sparse as sps
 from scipy.optimize import linprog
@@ -18,7 +31,7 @@ for n in [100, 500, 1000, 2000]:
     b_eq = A_eq @ x0
     c = np.random.randn(n)
 
-    # С CHOLMOD (sparse=True, cholesky=True)
+    # With CHOLMOD (sparse=True, cholesky=True)
     t0 = time.perf_counter()
     res = linprog(c, A_eq=A_eq, b_eq=b_eq,
                   method='interior-point',

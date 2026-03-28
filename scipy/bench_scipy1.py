@@ -1,3 +1,13 @@
+"""
+Benchmark: UMFPACK vs SuperLU for sparse linear systems (SciPy).
+ 
+Scenarios 1 and 2:
+  - Scenario 1: single solve via spsolve (UMFPACK vs SuperLU)
+  - Scenario 2: repeated solves via factorized (UMFPACK, LU cached)
+ 
+Matrix: sparse nonsymmetric, sizes n=500..5000, density=1%.
+"""
+
 import numpy as np
 import scipy.sparse as sp
 import time
