@@ -1,6 +1,6 @@
 """
 Benchmark: CHOLMOD vs UMFPACK vs dense Cholesky in SciPy linprog (Scenario 3).
- 
+
 Uses scipy.optimize.linprog with the interior-point method to solve a
 linear programme with a sparse equality constraint matrix. Compares:
   - sparse + Cholesky (CHOLMOD via SuiteSparse)
