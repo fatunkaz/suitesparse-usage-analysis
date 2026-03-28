@@ -17,14 +17,30 @@ np.random.seed(42)
 
 
 def make_sparse_spd(n, density=0.01):
-    """Create a sparse SPD matrix of size n x n"""
+    """Create a sparse symmetric positive definite matrix of size n x n.
+ 
+    Args:
+        n: matrix dimension.
+        density: fraction of nonzero entries before symmetrisation.
+ 
+    Returns:
+        Sparse CSC matrix A = R @ R.T + n*I, guaranteed SPD.
+    """
     A = sp.random(n, n, density=density, format='csc', dtype=np.float64)
     A = A @ A.T + sp.eye(n, format='csc') * n
     return A.tocsc()
 
 
 def make_sparse_nonsym(n, density=0.01):
-    """Create a sparse nonsymmetric matrix of size n x n"""
+    """Create a sparse nonsymmetric diagonally dominant matrix of size n x n.
+ 
+    Args:
+        n: matrix dimension.
+        density: fraction of nonzero off-diagonal entries.
+ 
+    Returns:
+        Sparse CSC matrix A = R + n*I, nonsingular by diagonal dominance.
+    """
     A = sp.random(n, n, density=density, format='csc', dtype=np.float64)
     A = A + sp.eye(n, format='csc') * n
     return A.tocsc()
